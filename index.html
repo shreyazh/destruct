@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Under Destruction</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turn.js"></script>
+  <style>
+    body {
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    #flipbook {
+      width: 90vw;              /* take 90% of screen width */
+      max-width: 900px;         /* but never bigger than 900px */
+      aspect-ratio: 3/2;        /* keeps 900x600 ratio */
+      height: auto;             /* auto height based on width */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background: rgb(0, 0, 0);
+    }
+
+    #flipbook .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      gap: 6px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="flipbook">
+    <div class="page"><img src="photos/1.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/2.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/3.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/4.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/5.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/6.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/7.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/8.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/9.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/10.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/11.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/12.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/13.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/14.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/15.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/16.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/17.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/18.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/19.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/20.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/21.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/22.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/23.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/24.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/25.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/26.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/27.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/28.jpg" alt="Book"></div>
+    <div class="page"><img src="photos/29.jpg" alt="Book"></div>
+  </div>
+
+  <script>
+    $("#flipbook").turn({
+      width: 900,
+      height: 600,
+      autoCenter: true,
+      elevation: 50,
+      gradients: true,
+      duration: 1000
+    });
+    $(document).keydown(function(e){
+  if (e.keyCode==37) $("#flipbook").turn("previous"); // left arrow
+  if (e.keyCode==39) $("#flipbook").turn("next");     // right arrow
+});
+  </script>
+</body>
+</html>
